@@ -1,0 +1,26 @@
+﻿
+@using Orchard.ContentManagement
+@using Orchard.Core.Title.Models
+@using Orchard.Fields.Fields
+@using Orchard.Taxonomies.Fields
+@{
+     Style.Include("table.css");
+     var animals = ((IEnumerable<ContentItem>)Model.ContentItems).ToList();
+}
+<p>
+     @T.Plural("There are no animals roaming our farm.", "There is 1 animal roaming our farm.", "There are {0} animals roaming our farm.", animals.Count)
+</p>
+<table class="items">
+     @foreach (var animal in animals)
+     {
+         var titlePart = animal.As<TitlePart>();
+         var animalName = titlePart.Title;
+         var speciesField = (TaxonomyField)animal.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Species");
+         var genderField = (BooleanField)animal.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Gender");
+         var genderDescription = genderField.Value == true ? T("male") : T("female");
+         var species = String.Join(" ", speciesField.Terms.Select(x => Html.ItemDisplayLink(x)));
+        <tr>            
+            <td>@T("{0} is a {1} {2}", animalName, genderDescription, species)</td>            
+        </tr>
+    }    
+</table>

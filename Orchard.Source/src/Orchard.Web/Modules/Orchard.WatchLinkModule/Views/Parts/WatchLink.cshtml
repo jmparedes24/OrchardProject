@@ -1,0 +1,6 @@
+﻿@model Orchard.WatchLinkModule.Models.WatchLinkPart
+
+<label><b>@Html.LabelFor(m => m.Description)</b></label>
+<label>@Html.LabelFor(m => m.Price)</label>
+@Html.HiddenFor(m => m.Link, new { id = "BuyNowLink" })
+<button type="button">Buy Now</button>

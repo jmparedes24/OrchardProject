@@ -1,0 +1,55 @@
+﻿
+@using Orchard.ContentManagement
+@using Orchard.Core.Title.Models
+@using Orchard.Fields.Fields
+@using Orchard.Autoroute.Models
+@using Orchard.ContentManagement
+@using Orchard.MediaLibrary.Fields
+
+@{
+    Style.Include("table.css");
+    var watches = ((IEnumerable<ContentItem>)Model.ContentItems).ToList();
+    
+}
+@*<p>
+     @T.Plural("There are no animals roaming our farm.", "There is 1 animal roaming our farm.", "There are {0} animals roaming our farm.", animals.Count)
+</p>*@
+@*<table class="items">
+     @foreach (var animal in animals)
+     {
+         var titlePart = animal.As<TitlePart>();
+         var Watch = titlePart.Title;
+         //var speciesField = (TaxonomyField)animal.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Species");
+         //var genderField = (BooleanField)animal.Parts.SelectMany(x => x.Fields).Single(x => x.Name == "Gender");
+         //var genderDescription = genderField.Value == true ? T("male") : T("female");
+         //var species = String.Join(" ", speciesField.Terms.Select(x => Html.ItemDisplayLink(x)));
+        <tr>            
+            <td>@T("{0}", Watch)</td>            
+        </tr>
+    }    
+</table>*@
+
+<div class="row watch-model-dropdown-container">
+    <div class="col-log-12">
+        <div class="row">
+            @foreach (var item in watches)
+            {
+                var link = item.As<AutoroutePart>().Path;
+                var image = item.Parts.SelectMany(x => x.Fields).Single(y => y.Name.Equals("MainImage"));
+                var contentProductPart = item.As<Orchard.RolexWebShop.Models.ProductPart>();
+                var shortDescription = contentProductPart.ShortDescription;
+                var price = contentProductPart.UnitPrice;
+                var imagePath = ((MediaLibraryPickerField)image).FirstMediaUrl;
+                <div class="col-lg-6 model-container">
+                    <span><img src="@imagePath" class="fixed-ratio-resize" /></span><br />
+                    <span class="model-category">@shortDescription</span><br />
+                    <span class="model-short-description">@price.ToString("c")</span><br />
+                    <a class="btn btn-default" href="@link">                       
+                       BUY NOW
+                    </a>
+                </div>
+            }
+           
+        </div>
+    </div>
+</div>

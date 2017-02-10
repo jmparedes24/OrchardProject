@@ -1,0 +1,13 @@
+State: Running
+Themes: 
+Modules: 
+Name: Default
+DataProvider: SqlServer
+DataConnectionString: Data Source=localhost;Initial Catalog=RolexLuxuryWatchDB;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+DataTablePrefix: CMSRolex
+RequestUrlHost: null
+RequestUrlPrefix: null
+EncryptionAlgorithm: AES
+EncryptionKey: EF4476AF7952302452470C48299958D11FC848B622D9819B2AE721FDB4610F06
+HashAlgorithm: HMACSHA256
+HashKey: 5941E97343FD66B422FF5ED238C04D3CF3D71F290F4B317F78819783CC93CE52B1E48F46B1A17402F960A4FC1BA90FA956C51C0FD75A3D8B263C41820F4CD78A

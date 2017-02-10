@@ -1,0 +1,86 @@
+﻿.square-luxury{
+    background-color: #A27F2D;
+    color: #fff;
+    text-align: center;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+.title-rolex-page .certified{
+    color: #C1C1C3;
+    text-align: center;
+}
+
+.logo-page{
+    background: url(../../../Media/Default/Home/rolexpage.jpg);    
+    background-size:contain;
+    background-repeat: no-repeat;    
+    height:0;
+    width: 100%;
+    padding-top: 10%
+}
+
+
+.back-watch-1{
+    background: url(../../../Media/Default/Home/wallpaper-1.jpg);    
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    height:700px;
+}
+
+.back-watch-1 > label{
+    margin-top:50%;
+    color: #fff;
+}
+
+.btn-rolex-transparent{
+    opacity: 0.9; 
+    border-color:#fff;
+    background:rgba(0,0,0,0.5);
+    color: #fff;
+    margin-top: 10%;
+    width:15%;
+}
+
+.back-watch-2{
+    background: url(../../../Media/Default/Home/wallpaper-2.jpg);    
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    height:700px;
+}
+
+.back-watch-3{
+    background: url(../../../Media/Default/Home/wallpaper-3.jpg);    
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    height:700px;
+}
+
+p > img { /* basic responsive img */
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* IE8 */
+}
+
+.fixed-ratio-resize { /* basic responsive img */
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* IE8 */
+}
+
+.nav-transparent > ul > li {
+    border: 1px solid #dbdbdb;   
+    display: block;
+    margin: 0 2px -1px 0;
+    background:rgba(255,255,255,0.5);
+    opacity: 0.9; 
+    border-color:#fff;
+    color: #fff;
+}
+.nav-transparent ul li { border-right: 1px solid #000000; }
+
+.nav-transparent ul li:last-child { border-right: none }
+
+.nav-transparent ul ul li { border-right: none }
